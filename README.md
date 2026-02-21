@@ -1,53 +1,36 @@
-# call-bound <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-[![github actions][actions-image]][actions-url]
-[![coverage][codecov-image]][codecov-url]
-[![dependency status][deps-svg]][deps-url]
-[![dev dependency status][dev-deps-svg]][dev-deps-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
+## Getting Started
 
-[![npm badge][npm-badge-png]][package-url]
+First, run the development server:
 
-Robust call-bound JavaScript intrinsics, using `call-bind` and `get-intrinsic`.
-
-## Getting started
-
-```sh
-npm install --save call-bound
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Usage/Examples
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```js
-const assert = require('assert');
-const callBound = require('call-bound');
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-const slice = callBound('Array.prototype.slice');
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-delete Function.prototype.call;
-delete Function.prototype.bind;
-delete Array.prototype.slice;
+## Learn More
 
-assert.deepEqual(slice([1, 2, 3, 4], 1, -1), [2, 3]);
-```
+To learn more about Next.js, take a look at the following resources:
 
-## Tests
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Clone the repo, `npm install`, and run `npm test`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-[package-url]: https://npmjs.org/package/call-bound
-[npm-version-svg]: https://versionbadg.es/ljharb/call-bound.svg
-[deps-svg]: https://david-dm.org/ljharb/call-bound.svg
-[deps-url]: https://david-dm.org/ljharb/call-bound
-[dev-deps-svg]: https://david-dm.org/ljharb/call-bound/dev-status.svg
-[dev-deps-url]: https://david-dm.org/ljharb/call-bound#info=devDependencies
-[npm-badge-png]: https://nodei.co/npm/call-bound.png?downloads=true&stars=true
-[license-image]: https://img.shields.io/npm/l/call-bound.svg
-[license-url]: LICENSE
-[downloads-image]: https://img.shields.io/npm/dm/call-bound.svg
-[downloads-url]: https://npm-stat.com/charts.html?package=call-bound
-[codecov-image]: https://codecov.io/gh/ljharb/call-bound/branch/main/graphs/badge.svg
-[codecov-url]: https://app.codecov.io/gh/ljharb/call-bound/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/call-bound
-[actions-url]: https://github.com/ljharb/call-bound/actions
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
