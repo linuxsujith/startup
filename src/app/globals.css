@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #0B0F14;
+  --foreground: #F8FAFC;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Executive Matte Blur */
+.matte-glass {
+  background: rgba(17, 23, 30, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle fade animation */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.executive-input {
+  @apply w-full rounded-lg border border-brand-border bg-brand-background px-4 py-3 text-white placeholder-white/20 outline-none transition-all focus:border-brand-blue/50 focus:bg-white/[0.02];
+}
+
+.executive-button-primary {
+  @apply flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue py-3.5 font-semibold text-white transition-all hover:bg-brand-blue/90 hover:shadow-lg disabled:opacity-50;
+}
