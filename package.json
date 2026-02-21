@@ -1,50 +1,31 @@
 {
-  "name": "acorn",
-  "description": "ECMAScript parser",
-  "homepage": "https://github.com/acornjs/acorn",
-  "main": "dist/acorn.js",
-  "types": "dist/acorn.d.ts",
-  "module": "dist/acorn.mjs",
-  "exports": {
-    ".": [
-      {
-        "import": "./dist/acorn.mjs",
-        "require": "./dist/acorn.js",
-        "default": "./dist/acorn.js"
-      },
-      "./dist/acorn.js"
-    ],
-    "./package.json": "./package.json"
-  },
-  "version": "8.16.0",
-  "engines": {
-    "node": ">=0.4.0"
-  },
-  "maintainers": [
-    {
-      "name": "Marijn Haverbeke",
-      "email": "marijnh@gmail.com",
-      "web": "https://marijnhaverbeke.nl"
-    },
-    {
-      "name": "Ingvar Stepanyan",
-      "email": "me@rreverser.com",
-      "web": "https://rreverser.com/"
-    },
-    {
-      "name": "Adrian Heine",
-      "web": "http://adrianheine.de"
-    }
+  "name": "argparse",
+  "description": "CLI arguments parser. Native port of python's argparse.",
+  "version": "2.0.1",
+  "keywords": [
+    "cli",
+    "parser",
+    "argparse",
+    "option",
+    "args"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/acornjs/acorn.git"
-  },
-  "license": "MIT",
+  "main": "argparse.js",
+  "files": [
+    "argparse.js",
+    "lib/"
+  ],
+  "license": "Python-2.0",
+  "repository": "nodeca/argparse",
   "scripts": {
-    "prepare": "cd ..; npm run build:main"
+    "lint": "eslint .",
+    "test": "npm run lint && nyc mocha",
+    "coverage": "npm run test && nyc report --reporter html"
   },
-  "bin": {
-    "acorn": "bin/acorn"
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.11.0",
+    "@babel/plugin-syntax-class-properties": "^7.10.4",
+    "eslint": "^7.5.0",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   }
 }
